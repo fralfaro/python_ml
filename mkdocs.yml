@@ -2,13 +2,13 @@
 
 # Project information
 site_name: Home
-site_url: https://github.com/fralfaro/python_intro
+site_url: https://github.com/fralfaro/python_ml
 site_author: Francisco Alfaro
-site_description: Basic demo
+site_description: Machine Learning - Python
 
 # Repository
 repo_name: fralfaro/python_intro
-repo_url: https://github.com/fralfaro/python_intro
+repo_url: https://github.com/fralfaro/python_ml
 edit_uri: ''
 
 
