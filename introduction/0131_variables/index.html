@@ -1796,7 +1796,7 @@ $$x_{prep} = \dfrac{x-x_{min}}{x_{min}-x_{max}}$$</p>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
 <span class="c1"># cargar datos</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;apartments.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/apartments.csv&quot;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 <div id="cell-1" class="clipboard-copy-txt"># librerias
@@ -1806,7 +1806,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
 # cargar datos
-df = pd.read_csv("apartments.csv")
+df = pd.read_csv("data/apartments.csv")
 df.head()</div>
     
         </div>
@@ -2948,7 +2948,7 @@ df.head()</div>
 
 <span class="c1"># leer datos</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Raw_Medical_Data_for_day1.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/medical_data.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 <div id="cell-11" class="clipboard-copy-txt"># ejemplo
@@ -2961,7 +2961,7 @@ from sklearn.preprocessing import OneHotEncoder
 
 # leer datos
 
-df = pd.read_csv('Raw_Medical_Data_for_day1.csv')
+df = pd.read_csv('data/medical_data.csv')
 df.head()</div>
     
         </div>
@@ -3003,7 +3003,6 @@ df.head()</div>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Unnamed: 0</th>
       <th>State</th>
       <th>Lat</th>
       <th>Lng</th>
@@ -3013,6 +3012,7 @@ df.head()</div>
       <th>Income</th>
       <th>Marital</th>
       <th>Gender</th>
+      <th>ReAdmis</th>
       <th>...</th>
       <th>Hyperlipidemia</th>
       <th>BackPain</th>
@@ -3029,7 +3029,6 @@ df.head()</div>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
       <td>AL</td>
       <td>34.34960</td>
       <td>-86.72508</td>
@@ -3039,6 +3038,7 @@ df.head()</div>
       <td>86575.93</td>
       <td>Divorced</td>
       <td>Male</td>
+      <td>0</td>
       <td>...</td>
       <td>0.0</td>
       <td>1.0</td>
@@ -3053,7 +3053,6 @@ df.head()</div>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
       <td>FL</td>
       <td>30.84513</td>
       <td>-85.22907</td>
@@ -3063,6 +3062,7 @@ df.head()</div>
       <td>46805.99</td>
       <td>Married</td>
       <td>Female</td>
+      <td>0</td>
       <td>...</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -3077,7 +3077,6 @@ df.head()</div>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
       <td>SD</td>
       <td>43.54321</td>
       <td>-96.63772</td>
@@ -3087,6 +3086,7 @@ df.head()</div>
       <td>14370.14</td>
       <td>Widowed</td>
       <td>Female</td>
+      <td>0</td>
       <td>...</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -3101,7 +3101,6 @@ df.head()</div>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
       <td>MN</td>
       <td>43.89744</td>
       <td>-93.51479</td>
@@ -3111,6 +3110,7 @@ df.head()</div>
       <td>39741.49</td>
       <td>Married</td>
       <td>Male</td>
+      <td>0</td>
       <td>...</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -3125,7 +3125,6 @@ df.head()</div>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
       <td>VA</td>
       <td>37.59894</td>
       <td>-76.88958</td>
@@ -3135,6 +3134,7 @@ df.head()</div>
       <td>1209.56</td>
       <td>Widowed</td>
       <td>Female</td>
+      <td>0</td>
       <td>...</td>
       <td>1.0</td>
       <td>0.0</td>
@@ -3149,7 +3149,7 @@ df.head()</div>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 33 columns</p>
+<p>5 rows × 32 columns</p>
 </div>
 </div>
 
@@ -3207,44 +3207,43 @@ df.head()</div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 1000 entries, 0 to 999
-Data columns (total 33 columns):
+Data columns (total 32 columns):
  #   Column              Non-Null Count  Dtype  
 ---  ------              --------------  -----  
- 0   Unnamed: 0          1000 non-null   int64  
- 1   State               1000 non-null   object 
- 2   Lat                 1000 non-null   float64
- 3   Lng                 1000 non-null   float64
- 4   Area                1000 non-null   object 
- 5   Children            993 non-null    float64
- 6   Age                 1000 non-null   int64  
- 7   Income              1000 non-null   float64
- 8   Marital             1000 non-null   object 
- 9   Gender              1000 non-null   object 
- 10  ReAdmis             1000 non-null   int64  
- 11  VitD_levels         1000 non-null   float64
- 12  Doc_visits          1000 non-null   int64  
- 13  Full_meals_eaten    1000 non-null   int64  
- 14  vitD_supp           1000 non-null   int64  
- 15  Soft_drink          1000 non-null   int64  
- 16  Initial_admin       1000 non-null   object 
- 17  HighBlood           1000 non-null   int64  
- 18  Stroke              1000 non-null   int64  
- 19  Complication_risk   1000 non-null   object 
- 20  Overweight          1000 non-null   int64  
- 21  Arthritis           994 non-null    float64
- 22  Diabetes            994 non-null    float64
- 23  Hyperlipidemia      998 non-null    float64
- 24  BackPain            992 non-null    float64
- 25  Anxiety             998 non-null    float64
- 26  Allergic_rhinitis   994 non-null    float64
- 27  Reflux_esophagitis  1000 non-null   int64  
- 28  Asthma              1000 non-null   int64  
- 29  Services            1000 non-null   object 
- 30  Initial_days        1000 non-null   float64
- 31  TotalCharge         1000 non-null   float64
- 32  Additional_charges  1000 non-null   float64
-dtypes: float64(14), int64(12), object(7)
-memory usage: 257.9+ KB
+ 0   State               995 non-null    object 
+ 1   Lat                 1000 non-null   float64
+ 2   Lng                 1000 non-null   float64
+ 3   Area                995 non-null    object 
+ 4   Children            993 non-null    float64
+ 5   Age                 1000 non-null   int64  
+ 6   Income              1000 non-null   float64
+ 7   Marital             995 non-null    object 
+ 8   Gender              995 non-null    object 
+ 9   ReAdmis             1000 non-null   int64  
+ 10  VitD_levels         1000 non-null   float64
+ 11  Doc_visits          1000 non-null   int64  
+ 12  Full_meals_eaten    1000 non-null   int64  
+ 13  vitD_supp           1000 non-null   int64  
+ 14  Soft_drink          1000 non-null   int64  
+ 15  Initial_admin       995 non-null    object 
+ 16  HighBlood           1000 non-null   int64  
+ 17  Stroke              1000 non-null   int64  
+ 18  Complication_risk   995 non-null    object 
+ 19  Overweight          1000 non-null   int64  
+ 20  Arthritis           994 non-null    float64
+ 21  Diabetes            994 non-null    float64
+ 22  Hyperlipidemia      998 non-null    float64
+ 23  BackPain            992 non-null    float64
+ 24  Anxiety             998 non-null    float64
+ 25  Allergic_rhinitis   994 non-null    float64
+ 26  Reflux_esophagitis  1000 non-null   int64  
+ 27  Asthma              1000 non-null   int64  
+ 28  Services            995 non-null    object 
+ 29  Initial_days        1000 non-null   float64
+ 30  TotalCharge         1000 non-null   float64
+ 31  Additional_charges  1000 non-null   float64
+dtypes: float64(14), int64(11), object(7)
+memory usage: 250.1+ KB
 </pre>
 </div>
 </div>
@@ -3314,9 +3313,9 @@ memory usage: 257.9+ KB
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Medium    462
-High      312
-Low       222
+<pre>Medium    459
+High      311
+Low       221
 Med         4
 Name: Complication_risk, dtype: int64</pre>
 </div>
@@ -3377,9 +3376,9 @@ df['Complication_risk'].value_counts()</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>1    466
-2    312
-0    222
+<pre>1.0    463
+2.0    311
+0.0    221
 Name: Complication_risk, dtype: int64</pre>
 </div>
 
@@ -3438,11 +3437,11 @@ Name: Complication_risk, dtype: int64</pre>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Additional_charges&#39;</span><span class="p">])</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Additional_charges&#39;</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Additional_charges&#39;</span><span class="p">]</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt">X = df.drop(columns = ['Unnamed: 0', 'Additional_charges'])
+<div id="cell-15" class="clipboard-copy-txt">X = df.drop(columns = ['Additional_charges'])
 y = df['Additional_charges']
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)</div>
     
@@ -3791,9 +3790,9 @@ train_ohe</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[0., 0., 0., ..., 0., 1., 0.],
+<pre>array([[0., 0., 0., ..., 1., 0., 0.],
        [0., 1., 0., ..., 0., 0., 0.],
-       [0., 0., 0., ..., 0., 1., 0.],
+       [0., 0., 0., ..., 1., 0., 0.],
        ...,
        [0., 0., 0., ..., 0., 0., 0.],
        [0., 0., 0., ..., 0., 0., 0.],
@@ -3905,16 +3904,16 @@ train_ohe.head()</div>
       <th>State_FL</th>
       <th>State_GA</th>
       <th>...</th>
-      <th>Gender_f</th>
-      <th>Gender_m</th>
-      <th>Gender_male</th>
+      <th>Gender_nan</th>
       <th>Initial_admin_Elective Admission</th>
       <th>Initial_admin_Emergency Admission</th>
       <th>Initial_admin_Observation Admission</th>
+      <th>Initial_admin_nan</th>
       <th>Services_Blood Work</th>
       <th>Services_CT Scan</th>
       <th>Services_Intravenous</th>
       <th>Services_MRI</th>
+      <th>Services_nan</th>
     </tr>
   </thead>
   <tbody>
@@ -3933,13 +3932,13 @@ train_ohe.head()</div>
       <td>...</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -3957,11 +3956,11 @@ train_ohe.head()</div>
       <td>...</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -3982,12 +3981,12 @@ train_ohe.head()</div>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -4006,10 +4005,10 @@ train_ohe.head()</div>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>1.0</td>
       <td>0.0</td>
       <td>1.0</td>
-      <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -4028,19 +4027,19 @@ train_ohe.head()</div>
       <td>0.0</td>
       <td>...</td>
       <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 72 columns</p>
+<p>5 rows × 78 columns</p>
 </div>
 </div>
 
@@ -4158,16 +4157,16 @@ X_train_processed.head()</div>
       <th>Full_meals_eaten</th>
       <th>vitD_supp</th>
       <th>...</th>
-      <th>Gender_f</th>
-      <th>Gender_m</th>
-      <th>Gender_male</th>
+      <th>Gender_nan</th>
       <th>Initial_admin_Elective Admission</th>
       <th>Initial_admin_Emergency Admission</th>
       <th>Initial_admin_Observation Admission</th>
+      <th>Initial_admin_nan</th>
       <th>Services_Blood Work</th>
       <th>Services_CT Scan</th>
       <th>Services_Intravenous</th>
       <th>Services_MRI</th>
+      <th>Services_nan</th>
     </tr>
   </thead>
   <tbody>
@@ -4186,13 +4185,13 @@ X_train_processed.head()</div>
       <td>...</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -4210,11 +4209,11 @@ X_train_processed.head()</div>
       <td>...</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -4235,12 +4234,12 @@ X_train_processed.head()</div>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
       <td>0.0</td>
     </tr>
     <tr>
@@ -4259,10 +4258,10 @@ X_train_processed.head()</div>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>1.0</td>
       <td>0.0</td>
       <td>1.0</td>
-      <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -4281,19 +4280,19 @@ X_train_processed.head()</div>
       <td>0</td>
       <td>...</td>
       <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 97 columns</p>
+<p>5 rows × 103 columns</p>
 </div>
 </div>
 
