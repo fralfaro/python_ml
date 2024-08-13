@@ -1,11 +1,11 @@
-name: GitHub Actions
+name: CI
 on: [push]
 jobs:
   Pages:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8 ]
+        python-version: [3.10.x]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
@@ -24,5 +24,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           
-
-
