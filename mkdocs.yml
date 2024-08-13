@@ -38,8 +38,8 @@ extra_javascript:
 theme:
   name: material
   language: es
-  logo: images/logo_ml.png
-  favicon: images/logo_fam.png
+  logo: images/python.png
+  favicon: images/icon.png
   features:
     - navigation.instant
     - navigation.top
@@ -90,8 +90,8 @@ plugins:
 
 # TOC
 nav:
-    - Home: index.md
-    - Introducción:
+    - 🏠 Home: index.md
+    - 📖 Introducción:
         - introduction/01_intro.ipynb
         - introduction/011_concepts.ipynb
         - introduction/012_sklearn.ipynb
