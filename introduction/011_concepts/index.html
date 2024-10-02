@@ -562,15 +562,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#interpretacion-de-la-curva-roc" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interpretación de la Curva ROC
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1129,15 +1120,6 @@
   <a href="#curva-roc-y-auc" class="md-nav__link">
     <span class="md-ellipsis">
       Curva ROC y AUC
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#interpretacion-de-la-curva-roc" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interpretación de la Curva ROC
     </span>
   </a>
   
@@ -3158,27 +3140,14 @@ F1-Score:  0.9286
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=03ef5080">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>La <strong>curva ROC</strong> (Receiver Operating Characteristic) es una herramienta gráfica utilizada para evaluar el rendimiento de los algoritmos de clasificación binaria, es decir, aquellos que separan datos en dos clases (como 1 o 0, Verdadero o Falso). A diferencia de otras métricas que proporcionan un valor único, la curva ROC ofrece una representación visual del desempeño del modelo.</p>
-<p>La curva ROC se basa en los siguientes conceptos fundamentales de la clasificación binaria: <strong>Verdadero Positivo (TP), Falso Positivo (FP), Verdadero Negativo (TN) y Falso Negativo (FN)</strong>.</p>
-<p>La curva se construye trazando la <strong>tasa de verdaderos positivos</strong> (TPR o "recall") frente a la <strong>tasa de falsos positivos</strong> (FPR) a diferentes umbrales de decisión. Esta gráfica permite analizar el equilibrio entre la sensibilidad (capacidad de detectar positivos) y la especificidad (capacidad de evitar falsos positivos) del modelo, ayudando a identificar el mejor umbral para separar las clases.</p>
-<p><img align="center" alt="No description has been provided for this image" src="https://i0.wp.com/statisticallyrelevant.com/wp-content/uploads/2023/12/Conf-edited.png?resize=800%2C800&amp;ssl=1" width="400"/></p>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4d2e4d64">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>La curva <strong>ROC</strong> (Receiver Operating Characteristic) se genera calculando y trazando la <strong>tasa de verdaderos positivos (TPR)</strong> frente a la <strong>tasa de falsos positivos (FPR)</strong> para un clasificador, evaluado en distintos umbrales. Por ejemplo, en un modelo de regresión logística, el umbral se basa en la probabilidad predicha de que una observación pertenezca a la clase positiva. Aunque comúnmente se usa un umbral de 0.5 (si la probabilidad es mayor, se etiqueta como positiva), podemos elegir cualquier valor entre 0 y 1 (0.1, 0.3, 0.6, 0.99, etc.). La curva ROC nos permite visualizar cómo cambia el rendimiento del clasificador al ajustar estos umbrales.</p>
+<p>La <strong>curva ROC</strong> (Receiver Operating Characteristic) es una herramienta gráfica que evalúa el rendimiento de algoritmos de clasificación binaria, representando visualmente el desempeño del modelo. Se construye trazando la <strong>tasa de verdaderos positivos</strong> (TPR) frente a la <strong>tasa de falsos positivos</strong> (FPR) a diferentes umbrales de decisión, permitiendo analizar el equilibrio entre sensibilidad y especificidad.</p>
+<p>La curva se genera calculando la TPR y la FPR para distintos umbrales, comenzando generalmente con un valor de 0.5, aunque se pueden usar valores entre 0 y 1. Esto permite observar cómo cambia el rendimiento del clasificador al ajustar los umbrales.</p>
 <p><strong>Definición de las tasas</strong>:</p>
 <ul>
 <li><p><strong>Tasa de verdaderos positivos (TPR)</strong> o <strong>Sensibilidad</strong>:</p>
@@ -3194,34 +3163,13 @@ $$</p>
 <p>donde <strong>FP</strong> es el número de Falsos Positivos y <strong>TN</strong> es el número de Verdaderos Negativos. La FPR mide la frecuencia con la que una instancia verdaderamente negativa se clasifica incorrectamente como positiva, es decir, una "falsa alarma".</p>
 </li>
 </ul>
-<h3 id="interpretacion-de-la-curva-roc">Interpretación de la Curva ROC<a class="anchor-link" href="#interpretacion-de-la-curva-roc">¶</a></h3><p>A continuación, se muestra la curva ROC para tres clasificadores hipotéticos:</p>
-<p><img align="center" alt="No description has been provided for this image" height="360" src="https://polmartisanahuja.com/wp-content/uploads/2021/01/image-for-post-13-e1610536964827.png" width="600"/></p>
+<p><strong>Área Bajo la Curva</strong> (AUC)</p>
+<p>El AUC (Área Bajo la Curva) resume el rendimiento del clasificador:</p>
 <ul>
-<li><p>La <strong>línea gris punteada</strong> representa un clasificador aleatorio, es decir, "adivinar al azar". Esta línea tiene una pendiente de 1, lo que indica un balance perfecto entre la tasa de verdaderos y falsos positivos.</p>
-</li>
-<li><p>La <strong>línea violeta</strong> representa un clasificador perfecto, que alcanza una tasa de verdaderos positivos del 100% y una tasa de falsos positivos del 0%. Este es el mejor escenario posible, pero rara vez se alcanza en la práctica.</p>
-</li>
+<li>AUC = 0.5: Sin poder predictivo (predicción aleatoria).</li>
+<li>AUC = 1.0: Clasificador perfecto.</li>
 </ul>
-<p>En la mayoría de los casos reales, los clasificadores se ubican entre estas dos líneas. Lo que buscamos es un clasificador que mantenga una <strong>alta tasa de verdaderos positivos</strong> y una <strong>baja tasa de falsos positivos</strong>; es decir, un clasificador cuya curva ROC se aproxime lo más posible a la esquina superior izquierda, acercándose a la línea violeta. Esto indica un modelo que ofrece un buen poder predictivo, mucho mejor que una clasificación al azar.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0db4d98d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>AUC</strong> (Área Bajo la Curva)</p>
-<p>Aunque la curva ROC es útil para visualizar el rendimiento de un clasificador binario, en muchos casos es conveniente resumir esta información en una sola métrica: el <strong>AUC</strong> (Área Bajo la Curva). El <strong>AUC</strong> representa el área bajo la curva ROC, y su valor proporciona una medida del rendimiento general del clasificador.</p>
-<ul>
-<li><strong>AUC = 0.5</strong>: Representa un clasificador sin poder predictivo, equivalente a una predicción aleatoria.</li>
-<li><strong>AUC = 1.0</strong>: Indica un clasificador perfecto, que logra separar todas las clases correctamente.</li>
-</ul>
-<p>En general, cuanto mayor es el AUC, mejor es el rendimiento del clasificador para la tarea de clasificación. La mayoría de los modelos tendrán un AUC entre 0.5 y 1.0. Un AUC menor a 0.5 indica que el modelo está realizando predicciones invertidas, es decir, tiende a predecir la clase negativa cuando la verdadera es positiva, y viceversa.</p>
-<p>La siguiente figura ilustra cómo el AUC varía según el rendimiento del clasificador:</p>
-<p><img align="center" alt="No description has been provided for this image" height="360" src="https://polmartisanahuja.com/wp-content/uploads/2021/01/word-image-1-e1610537035631.png" width="600"/></p>
+<p>Un mayor AUC indica mejor rendimiento; AUC &lt; 0.5 sugiere predicciones inversas.</p>
 </div>
 </div>
 </div>
@@ -3327,7 +3275,8 @@ plt.show()
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Un <strong>AUC</strong> de 0.92 indica que el modelo tiene un rendimiento excelente para distinguir entre clases. Esto significa que el modelo tiene un 92% de probabilidad de clasificar correctamente una instancia positiva. Cuanto más cercano esté el AUC a 1.0, mejor es el modelo. Un AUC de 0.5, en cambio, indica que el modelo no tiene capacidad predictiva y está adivinando al azar.</p>
+<p>Un <strong>AUC</strong> de 0.92 indica que el modelo tiene un rendimiento excelente para distinguir entre clases. Esto significa que el modelo tiene un 92% de probabilidad de clasificar correctamente una instancia positiva.</p>
+<p>Cuanto más cercano esté el AUC a 1.0, mejor es el modelo. Un AUC de 0.5, en cambio, indica que el modelo no tiene capacidad predictiva y está adivinando al azar.</p>
 </div>
 </div>
 </div>
